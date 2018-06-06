@@ -14045,7 +14045,8 @@ Data points considered outliers for the feature &#39;Delicatessen&#39;:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>K-Means advantages are that he practically work well even some assumptions are broken, simple, easy to implement, easy to interpret the clustering results, fast and efficient in terms of computational cost. K-means is the simplest. To implement and to run. All you need to do is choose "k" and run it a number of times. The K-Means clustering algorithm is one of the fastest clustering algorithms available, with speed given by O(k<em>n</em>T) where n is our sample size and T is the number of iterations. It finds cluster centers by minimizing inertia, a computation of the distance of each clustered point from its center. The K-Means algorithm seems like it would work well with this data because I feel that it will identify more precisely which points belong in which cluster, with no incidence of overlap unlike a standard GMM.</p>
+<p>The K Means clustering algorithm is one of the fastest clustering algorithms available, with speed given by O(k n T) where n is our sample size and T is the number of iterations. It finds cluster centers by minimizing inertia, a computation of the distance of each clustered point from its center. The K-Means algorithm seems like it would work well with this data because I feel that it will identify more precisely which points belong in which cluster, with no incidence of overlap unlike a standard GMM.</p>
+<p>The Gaussian Mixture Model uses expectation-maximization to uncover latent data components, such as the centers of positive covariance. It does this by first placing components randomly (n_components argument) then predicts a probability of being associated with a particular latent component. The algorithm then re-attempts component placement, using prior results to maximize the expected probability. I feel this isn't optimal for this dataset, mainly because the GMM components may overlap and I feel this data-set is more readily divided symmetrically than according to expectation maximization, after our feature transformation created a 2-dimensional dataset. The K-Means algorithm seems like it would work well with this data because I feel that it will identify more precisely which points belong in which cluster, with no incidence of overlap unlike a standard GMM.  I do not want instances of overlapping label clusters, therefore K-means, which is a variation on GMM, is more appropriate.</p>
 
 </div>
 </div>
@@ -14741,8 +14742,15 @@ Sample point 2 predicted to be in Cluster 1
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>In examining less frequent delivery service, we can safely assume that foods that are frozen, detergents and paper goods, and groceries will not be strongly affected. However, reducing the frequency of deliveries by 40% creates a risk of having too small a supply of fresh, dairy and delicatessen products, which would negatively impact both Segments arguably.</p>
-<p>For an A/B test, the company could start delivery on the 3 day/week schedule for a small percentage of their customers (divided randomly into a control group and experimental group), and then gauge the reactions of customers using surveys or other feedback methods and identify the Segment that customers who react positively belong to. This would inform further decisions on which customers are likely to react positively to the change.</p>
+<p>Kmeans model has extracted two main customer types;</p>
+<ul>
+<li>Cluster/Segment 0; establishments such as retail food stores, grocery shops or prepared food stores </li>
+<li>Cluster/Segment 1; supermarkets/bulk distributors/big retail and big grocery stores (who stock lots of different items) and Cluster 0 'restaurants/cafes' who stock fresh food.</li>
+</ul>
+<p>It is likely that customers from Cluster 0 who serve lots of fresh food are going to want 5-day weeks in order to keep food as fresh as possible.</p>
+<p>Cluster 1 could be more flexible - they buy a more wide variety of perishable and non-perishable goods so do not necessarilly need a daily delivery.</p>
+<p>With this in mind, the Company could run A/B tests and generalize. By picking a subset customers from each Cluster, they can evaluate feedback seperately. It could be established whether changing the delivery service is critical to each segment, and whether customers are happy with the change.</p>
+<p>If a trend is found in a particular cluster, it allows a business to make educated and targeted decisions that would benefit their customers going forward depending on their profile. This is as opposed to which would generalize the entire customer-base.</p>
 
 </div>
 </div>
